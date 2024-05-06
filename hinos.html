@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hinos para ler no dia</title>
+    <style>
+        body {
+            background-color: #7bd;
+            text-align: center;
+            margin: auto;
+        } header {
+            width: 512px;
+            text-align: center;
+            margin: auto;
+            border-radius: 8px;
+            background-color: rgb(244, 244, 244);
+            font-family: fantasy;
+        } section {
+            width: 512px;
+            margin: auto;
+            text-align: center;
+            font-family: Calibri;
+            background-color: rgb(244, 244, 244);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            Hinos do Cantor Cristão e da Harpa Cristã
+        </h1>
+        <p>São 7 hinos (4 do CC e 3 da HC)</p>
+    </header>
+    <section>
+        <p>4 hinos do Cantor Cristão</p>
+        <input type="button" value="Imprimir" onclick="geraCantor()">
+        <p id="cantor"></p>
+        <p>3 hinos da Harpa Cristã</p>
+        <input type="button" value="Imprimir" onclick="geraHarpa()">
+        <p id="harpa"></p>
+    </section>
+    <script>
+        function geraCantor() {
+            function geraNumerosC (extensaoC) {
+                const numeros = [];
+                while (numeros.length < 4) { // 4 hinos do Cantor
+                    const aleatorio = parseInt(Math.random() * extensaoC);
+                    if (!numeros.includes(aleatorio)) {
+                        numeros.push(aleatorio)
+                    }
+                } return numeros;
+            }
+            let hinosCantor = document.getElementById('cantor');
+            const hinosGeradosCantor = geraNumerosC(582);
+
+            hinosCantor.innerHTML = hinosGeradosCantor;
+        }
+        function geraHarpa() {
+            function geraNumerosH (extensaoH) {
+                const numeros = [];
+                while (numeros.length < 3) { // 3 hinos da Harpa
+                    const aleatorio = parseInt(Math.random() * extensaoH);
+                    if (!numeros.includes(aleatorio)) {
+                        numeros.push(aleatorio)
+                    }
+                } return numeros;
+            }
+            let hinosHarpa = document.getElementById('harpa');
+            const hinosGeradosHarpa = geraNumerosH(633);
+
+            hinosHarpa.innerHTML = hinosGeradosHarpa;
+        }
+    </script>
+</body>
+</html>
